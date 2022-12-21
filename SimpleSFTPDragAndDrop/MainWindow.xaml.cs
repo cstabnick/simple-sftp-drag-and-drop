@@ -29,7 +29,6 @@ namespace SimpleSFTPDragAndDrop
             InitializeComponent();
         }
 
-        /// Please do not implement anything else in the MainWindow. All should be bound to the VM
         private void ImagePanel_OnDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -39,6 +38,20 @@ namespace SimpleSFTPDragAndDrop
                 foreach (var file in files)
                     myVm.Files.Add(file);
                 myVm.OnPropertyChanged("Files");
+            }
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            myVm.OnDrop();
+        }
+
+        private void PasswordBox_OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (sender is PasswordBox)
+            {
+                var pwBox = (PasswordBox)sender;
+                myVm.Password = pwBox.Password;
             }
         }
     }
