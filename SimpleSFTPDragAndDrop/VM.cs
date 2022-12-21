@@ -37,7 +37,14 @@ public class VM : INotifyPropertyChanged
         using (var client = new SftpClient(connectionInfo))
         {
             client.Connect();
-            client.CreateDirectory("./test");
+            try
+            {
+                client.CreateDirectory("./test");
+            }
+            catch
+            {
+            }
+
             client.ChangeDirectory("./test");
             foreach (var fileName in Files)
             {
