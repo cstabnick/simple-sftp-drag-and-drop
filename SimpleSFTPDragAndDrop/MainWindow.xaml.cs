@@ -54,5 +54,12 @@ namespace SimpleSFTPDragAndDrop
                 myVm.Password = pwBox.Password;
             }
         }
+
+        private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
+        {
+            myVm.Files.Clear();
+            myVm.OnPropertyChanged("Files");
+
+        }
     }
 }

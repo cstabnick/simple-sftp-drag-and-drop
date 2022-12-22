@@ -7,14 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Name="ImagePanel" Drop="ImagePanel_OnDrop" AllowDrop="true" Width="500" Height="1000" Background="Transparent" >
+        <StackPanel Name="ImagePanel" Drop="ImagePanel_OnDrop" AllowDrop="true" Width="800" Height="450"
+                    Background="Transparent">
             <TextBlock>Username</TextBlock><TextBox Text="{Binding Username}"></TextBox>
             <TextBlock>Password</TextBlock>
             <!-- <TextBox  Text="{Binding Password}"></TextBox> -->
             <PasswordBox PasswordChanged="PasswordBox_OnPasswordChanged"></PasswordBox>
             <TextBlock>Server</TextBlock><TextBox Text="{Binding Server}"></TextBox>
             <Button Click="ButtonBase_OnClick">DROP</Button>
-            <ListBox ItemsSource="{Binding Files}"></ListBox>
+            <Button Click="ButtonBase_OnClick2">Clear</Button>
+            <ListBox Height="200" ItemsSource="{Binding Files}"></ListBox>
+            <ScrollViewer MaxHeight="100" CanContentScroll="True">
+                <TextBlock Width="Auto" TextWrapping="Wrap" Text="{Binding OutLog}"/>
+            </ScrollViewer>
+            
         </StackPanel>
     </Grid>
 </Window>
