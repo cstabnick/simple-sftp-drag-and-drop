@@ -18,7 +18,7 @@
             <Button Click="ButtonBase_OnClick2">Clear</Button>
             <ListBox Height="200" ItemsSource="{Binding Files}"></ListBox>
             <ScrollViewer MaxHeight="100" CanContentScroll="True">
-                <TextBlock Width="Auto" TextWrapping="Wrap" Text="{Binding OutLog}"/>
+                <TextBlock Width="Auto" TextWrapping="Wrap" Text="{Binding SFTPLog}"/>
             </ScrollViewer>
             
         </StackPanel>
