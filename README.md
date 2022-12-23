@@ -1,5 +1,5 @@
 # simple-sftp-drag-and-drop
-Simple SFTP drop application 
+Simple SFTP drop application for Windows, implemented with WPF
 
 Drop files onto the center of the window, they will have their names populated in a list
 
